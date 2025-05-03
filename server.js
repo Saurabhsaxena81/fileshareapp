@@ -1,6 +1,15 @@
 require("dotenv").config();
+
+const cors = require("cors");
 const express = require("express");
 const app = express();
+// Default configuration looks like
+{
+    "origin": "*",
+    "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+    "preflightContinue": false,
+    "optionsSuccessStatus": 204
+  }
 const path = require("path");
 const PORT = process.env.PORT || 3000;
 app.use(express.static(path.join(__dirname, "public")));
